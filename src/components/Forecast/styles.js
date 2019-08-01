@@ -17,7 +17,7 @@ export const Day = styled.div`
   justify-content: space-between;
   align-items: center;
 
-  border: 1px solid #eee;
+  border: 1px solid #999;
   border-radius: 4px;
   padding: 10px;
 

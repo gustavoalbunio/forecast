@@ -156,7 +156,7 @@ export default class Home extends Component {
     return (
       <Container>
         <Search>
-          <h1>Title</h1>
+          <h1>Previsão do Tempo</h1>
           <Form data-testid="form" onSubmit={this.handleChangeForecast}>
             <SelectInput
               data-testid="estado"

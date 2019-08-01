@@ -30,7 +30,7 @@ export const Form = styled.form`
 
 export const SelectInput = styled.select`
   background: #fff;
-  border: 1px solid #eee;
+  border: 1px solid #999;
   font-size: 16px;
   height: 32px;
   border-radius: 4px;
