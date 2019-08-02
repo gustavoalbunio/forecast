@@ -33,12 +33,16 @@ export default class Home extends Component {
       'Sábado',
       'Domingo',
     ],
-    status: '',
+    status: 'default',
   };
+
+  abortController = new AbortController();
 
   async componentDidMount() {
     try {
-      const { data } = await ibge.get('/api/v1/localidades/estados');
+      const { data } = await ibge.get('/api/v1/localidades/estados', {
+        signal: this.abortController.signal,
+      });
 
       this.setState({ estados: data, status: 'default' });
     } catch (err) {
@@ -57,7 +61,10 @@ export default class Home extends Component {
       case 'estado':
         try {
           const { data } = await ibge.get(
-            `/api/v1/localidades/estados/${value}/municipios`
+            `/api/v1/localidades/estados/${value}/municipios`,
+            {
+              signal: this.abortController.signal,
+            }
           );
           this.setState({
             estado: value,
@@ -96,6 +103,7 @@ export default class Home extends Component {
 
     try {
       const { data: city } = await clima.get(`/api/v1/locale/city`, {
+        signal: this.abortController.signal,
         params: {
           name: cidade,
           token: config.token,
@@ -104,11 +112,13 @@ export default class Home extends Component {
 
       const [prev, temp] = await Promise.all([
         clima.get(`/api/v1/forecast/locale/${city[0].id}/days/15`, {
+          signal: this.abortController.signal,
           params: {
             token: config.token,
           },
         }),
         clima.get(`/api/v1/weather/locale/${city[0].id}/current`, {
+          signal: this.abortController.signal,
           params: {
             token: config.token,
           },
