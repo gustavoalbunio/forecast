@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { FaSearch } from 'react-icons/fa';
 import { ToastContainer, toast } from 'react-toastify';
-import { HashLoader } from 'react-spinners';
+import { HashLoader } from 'react-spinners/HashLoader';
 import 'react-toastify/dist/ReactToastify.css';
 import {
   Container,
@@ -155,7 +155,7 @@ export default class Home extends Component {
 
     return (
       <Container>
-        <Search>
+        <Search data-testid="search">
           <h1>Previsão do Tempo</h1>
           <Form data-testid="form" onSubmit={this.handleChangeForecast}>
             <SelectInput
@@ -191,7 +191,7 @@ export default class Home extends Component {
         {(() => {
           switch (status) {
             case 'default':
-              return <Default>Escolha um estado e uma cidade.</Default>;
+              return <Default>Escolha um estado e uma cidade agora.</Default>;
             case 'error':
               return (
                 <Default>
