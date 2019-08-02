@@ -3,7 +3,7 @@
   > Weather Query Application.
 
   <p>
-    <a href="https://acertforecast.netlify.com/">
+    <a href="https://forecast-webapp.netlify.com">
       <img alt="Demo on Netlify"      src="https://res.cloudinary.com/lukemorales/image/upload/v1563043495/readme_logos/demo_on_netlify_bbuvjz.png" width="20%">
     </a>
   </p>
