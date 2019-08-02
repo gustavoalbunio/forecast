@@ -202,7 +202,7 @@ export default class Home extends Component {
         {(() => {
           switch (status) {
             case 'default':
-              return <Default>Escolha um estado e uma cidade agora.</Default>;
+              return <Default>Escolha um estado e uma cidade.</Default>;
             case 'error':
               return (
                 <Default>
