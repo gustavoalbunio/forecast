@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { FaSearch } from 'react-icons/fa';
 import { ToastContainer, toast } from 'react-toastify';
-import { HashLoader } from 'react-spinners/HashLoader';
+import HashLoader from 'react-spinners/HashLoader';
 import 'react-toastify/dist/ReactToastify.css';
 import {
   Container,
@@ -62,6 +62,7 @@ export default class Home extends Component {
           this.setState({
             estado: value,
             cidades: data,
+            cidade: '',
           });
         } catch (error) {
           this.setState({ status: 'error' });
